@@ -7,3 +7,4 @@ venv
 __pycache__
 lingq_syncer.ankiaddon
 meta.json
+mklink.bat

@@ -58,7 +58,7 @@ Syncs into seperate `LyncQ Sync Deck`:
 
 ![img_1.png](imgs/img_1.png)
 
-###Misc
+### Misc
 
 ## Attributions
 

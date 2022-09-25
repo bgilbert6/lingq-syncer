@@ -42,7 +42,11 @@ def on_retrieve_success(retrieve_result: VocabRetrieveResult):
         lambda: mw.progress.update(label="LingQs downloaded, syncing notes..")
     )
 
+    cards_downloaded = len(retrieve_result.cards)
+
     retrieve_result.cards = [card for card in retrieve_result.cards if str(card['pk']) not in gids_to_notes]
+
+    new_cards = len(retrieve_result.cards)
 
     add_vocab(retrieve_result, did)
 
@@ -50,6 +54,17 @@ def on_retrieve_success(retrieve_result: VocabRetrieveResult):
         lambda: mw.progress.finish()
     )
 
+    aqt.mw.taskman.run_on_main(
+        lambda: mw.progress.finish()
+    )
+
+    show_result_dialog(cards_downloaded, new_cards)
+
+
+def show_result_dialog(downloaded, new_added) -> None:
+    message = f"{downloaded} LingQs downloaded and {new_added} new notes added."
+
+    showInfo(message)
     mw.moveToState("deckBrowser")
 
 
@@ -141,13 +156,12 @@ def retrieve_vocab(api_key) -> VocabRetrieveResult:
         aqt.mw.taskman.run_on_main(
             lambda: showInfo("LingQ returned unexpected response.")
         )
-    except Exception as e:
+    except Exception as exc:
         aqt.mw.taskman.run_on_main(
             lambda: mw.progress.finish()
         )
-        aqt.mw.taskman.run_on_main(
-            lambda: showInfo("Unexpected exception downloading vocabulary: " + e)
-        )
+
+        raise exc
 
     return VocabRetrieveResult(success=False)
 
@@ -159,10 +173,10 @@ def sync_lingq():
     op = QueryOp(
         parent=mw,
         op=lambda col: retrieve_vocab(api_key),
-        success=on_retrieve_success,
+        success=on_retrieve_success
     )
 
-    op.with_progress(label="Syncing...").run_in_background()
+    op.with_progress(label="Syncing LingQ...").run_in_background()
 
 
 mw.addonManager.setConfigAction(__name__, show_config_dialog)
