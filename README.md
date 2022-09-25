@@ -55,6 +55,7 @@ Syncs into seperate `LyncQ Sync Deck`:
 ![img.png](imgs/img.png)
 
 *Cards will be tagged grouped by lesson and course (if setting is enabled)*
+
 ![img_1.png](imgs/img_1.png)
 
 
