@@ -58,5 +58,13 @@ Syncs into seperate `LyncQ Sync Deck`:
 
 ![img_1.png](imgs/img_1.png)
 
+###Misc
+
+## Attributions
+
+- Inspired significantly by these existing plugins:
+https://github.com/JASchilz/AnkiSyncDuolingo
+https://github.com/CiaranCurran/auto-sync-lingq
+
 
 
