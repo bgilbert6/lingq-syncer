@@ -1,0 +1,9 @@
+venv
+.vscode
+.mypy_cache
+.pytest_cache
+.env.sh
+.idea
+__pycache__
+lingq_syncer.ankiaddon
+meta.json

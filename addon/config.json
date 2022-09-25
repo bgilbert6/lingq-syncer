@@ -1,0 +1,6 @@
+{
+  "api_key": "",
+  "included_statuses": "0,1,2",
+  "include_reverse_card": false,
+  "include_lesson_tags": true
+}
