@@ -14,19 +14,11 @@ Sync LingQs on demand.
 - Update LingQ from Anki deck after learned or mature
 - Include language as tag
 
-![img.png](imgs/img.png)
-
-*Syncs into seperate "LyncQ Sync Deck"*
-
-![img_1.png](imgs/img_1.png)
-
-*Lesson tags appear grouped by courses and lessons*
-
 ## Installing
 
 ### From the Anki Add-on Repository
 
-In Anki, select `Tools` -> `Add-ons` -> `Get Add-ons` and then enter the code from the bottom of this addon's 
+In Anki, select `Tools` -> `Add-ons` -> `Get Add-ons` and then enter the code from the bottom of this addon's page: [Anki Addon Page](https://ankiweb.net/shared/info/98811431)
 
 ## Use
 
@@ -34,19 +26,36 @@ In Anki, select `Tools` -> `Add-ons` -> `Get Add-ons` and then enter the code fr
 
 After installing the addon, please be sure to restart Anki.
 
-After you can now open the addons manager under the `Tools` -> `Add-ons` and access the main control pane by selecting the addon `LingQ Syncer` and then pressing the config button.
+After restarting, you can now open the addons settings under the `Tools` -> `Add-ons` and access the main control pane by selecting the addon `LingQ Syncer` and then pressing the config button.
+
+**You must insert the `LingQ API Key` or the addon will not work**
 
 ![img.png](imgs/img_3.png)
 
-Stauses:
+**Stauses:**
 - 0 = New
 - 1 = Recognized
 - 2 = Familiar
 - 3 = Learned
 
+Statuses must be a comma list.
+
+**Include Lesson Tags:**
+
+Unselecting this option will not include LingQ lesson tags. Syncing will be a little faster.
+
 ### Syncing
 
-To sync, click `Tools` -> `Sync LingQ`
+To sync your deck, click `Tools` -> `Sync LingQ`
 
 ![img_2.png](imgs/img_2.png)
+
+Syncs into seperate `LyncQ Sync Deck`:
+
+![img.png](imgs/img.png)
+
+*Cards will be tagged grouped by lesson and course (if setting is enabled)*
+![img_1.png](imgs/img_1.png)
+
+
 
