@@ -54,8 +54,7 @@ def get_all_cards(api_key):
             courses = get_courses(api_key, language)
 
             for course in courses:
-
-                lessons = get_lessons(api_key, language, course["pk"])
+                lessons = get_lessons(api_key, language, course["id"])
                 course['lessons'] = lessons
 
                 threads = []
